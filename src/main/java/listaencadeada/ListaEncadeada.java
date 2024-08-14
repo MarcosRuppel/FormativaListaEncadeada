@@ -58,6 +58,7 @@ public class ListaEncadeada {
             return;
         }
         // O nó anterior aponta para o próximo do nó atual, removendo o nó atual da lista
+        assert anterior != null;
         anterior.setProximo(atual.getProximo());
     }
 
@@ -87,7 +88,7 @@ public class ListaEncadeada {
             switch(opcao){
                 case 0:
                     continuar = false;
-                    System.out.println("Lista Encadeada:");
+                    System.out.println("Lista Final:");
                     lista.imprime();
                     break;
                 case 1:
@@ -99,11 +100,15 @@ public class ListaEncadeada {
                             break;
                         }
                         lista.inserir(item);
+                        System.out.println("Lista Atual:");
+                        lista.imprime();
                     } break;
                 case 2:
                     System.out.println("Informe o indice do node a ser excluido: ");
                     int index = scanner.nextInt();
                     lista.remover(index);
+                    System.out.println("Lista Atual:");
+                    lista.imprime();
                     break;
                 default:
                     System.out.println("Escolha uma opcao valida!");
